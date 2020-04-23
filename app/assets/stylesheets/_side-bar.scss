@@ -14,20 +14,20 @@ $main-color: #ffffff;
   &__group-list {
     height: calc( 100vh - 100px );
     background-color: #2f3e51;
-  
-    &__name {
-      color: $main-color;
-      font: bold;
-      font-size: 15px;
-      padding: 20px 20px 5px;
-    }
-  
-    &__messages {
-      color: $main-color;
-      font: bold;
-      font-size: 11px;
-      padding:0 20px 40px;
-    }
+
+      &__name {
+        color: $main-color;
+        font: bold;
+        font-size: 15px;
+        padding: 20px 20px 5px;
+      }
+    
+      &__message {
+        color: $main-color;
+        font: bold;
+        font-size: 11px;
+        padding:0 20px 40px;
+      }
 
   }
 }
