@@ -22,6 +22,7 @@ set :repo_url, "git@github.com:motch-mo/chat-space.git"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
+set :linked_files, %w{ config/secrets.yml }
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -54,4 +55,16 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  desc 'upload secrets.yml'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
