@@ -22,7 +22,7 @@ set :repo_url, "git@github.com:motch-mo/chat-space.git"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
-set :linked_files, %w{ config/secrets.yml }
+# set :linked_files, %w{ config/secrets.yml }
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -49,6 +49,10 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
+
+set :linked_files, %w{ config/secrets.yml }
+
+# 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
