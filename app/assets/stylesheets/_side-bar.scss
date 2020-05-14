@@ -14,17 +14,18 @@ $main-color: #ffffff;
   &__group-list {
     height: calc( 100vh - 100px );
     background-color: #2f3e51;
+    a {
+      text-decoration: none;
+    }
 
       &__name {
         color: $main-color;
-        font: bold;
         font-size: 15px;
         padding: 20px 20px 5px;
       }
     
       &__message {
         color: $main-color;
-        font: bold;
         font-size: 11px;
         padding:0 20px 40px;
       }
@@ -42,7 +43,7 @@ $main-color: #ffffff;
   &__name {
     font-size: 16px;
     color: $main-color;
-    font: bold;
+    font-weight: bold;
   }
 
   &__icons {

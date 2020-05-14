@@ -33,6 +33,12 @@
       width: 72px;
       margin-top: 28px;
       padding: 0 20px;
+      border: solid 1px #38aef0;
+
+      a {
+        text-decoration: none;
+        color: #38aef0
+      }
     }
   }
 
@@ -45,7 +51,6 @@
     &__message {
       padding-top: 35px;
       display: flex;
-      justify-content: space-between;
 
       &__name {
         color: #333333;
@@ -55,6 +60,7 @@
       &__date {
         color: #999999;
         font-size: 12px;
+        margin-left: 10px;
       }
     }
 
